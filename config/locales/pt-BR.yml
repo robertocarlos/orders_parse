@@ -1,0 +1,22 @@
+pt-BR:
+  number:
+     currency:
+        format:
+          unit: 'R$'
+          delimiter: '.'
+          separator: ','
+          precision: 2
+          format: '%u %n'
+  order:
+    buyer: Comprador
+    description: Descrição
+    unit_price: Preço unitário
+    quantity: Quantidade
+    total_price: Total pedido
+    address: Endereço
+    supplier: Fornecedor
+  view:
+    order:
+      total: "Total :"
+      import: Importar pedidos
+      send: Enviar

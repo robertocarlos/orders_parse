@@ -1,0 +1,38 @@
+<h1>Pedidos</h1>
+<% unless @orders.empty? %>
+<table class="ordersTable">
+  <thead>
+    <tr>
+      <th><%= link_sort_by(:order, :buyer, @sorting) %></th>
+      <th><%= t("order.description") %></th>
+      <th><%= t("order.unit_price") %></th>
+      <th><%= t("order.quantity") %></th>
+      <th><%= link_sort_by(:order, :total_price, @sorting) %></th>
+      <th><%= t("order.address") %></th>
+      <th><%= link_sort_by(:order, :supplier, @sorting) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td><%= order.buyer %></td>
+      <td><%= order.description %></td>
+      <td><%= number_to_currency(order.unit_price) %></td>
+      <td><%= order.quantity %></td>
+      <td><%= number_to_currency(order.total_price) %></td>
+      <td><%= order.address %></td>
+      <td><%= order.supplier %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr class="total">
+      <th><%= t('view.order.total')%></th>
+      <td><%= number_to_currency(@total) %></td>
+    </tr>
+  </tfoot>
+</table>
+<br>
+<% end %>
+<%= link_to t("view.order.import"), new_order_path %>

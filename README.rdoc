@@ -1,0 +1,43 @@
+= README
+
+
+== Description
+The purpose of this application isn't the feature or the layout, but to show the code and the tests. This 
+application was built with <tt>Ruby on Rails</tt> for coding, and <tt>cucumber</tt> and <tt>rspec</tt> for 
+testing. The feature is to import a raw file available on "spec/fixtures/valid_file.txt" and to show imported 
+orders and total.
+----------
+
+
+== Ruby version
+This application was built on ruby-2.1.3.
+----------
+
+
+== Configuration
+After the environment has ruby and rubygems properly installed, type the follow command to install all 
+gems.
+  cp config/database.yml.example config/database.yml
+  bundle
+  
+----------
+
+
+== Database creation
+For create a database at first time, just type the follow command and choose the environment on <tt>RAILS_ENV
+</tt> variable.
+  RAILS_ENV=production rake db:create db:migrate
+----------
+
+== Test suite
+This application use <tt>cucumber</tt> framework to features tests and <tt>rspec</tt> to unit tests. Run all 
+test suite with command:
+  rake
+----------
+
+
+== Deployment instructions
+To run the app locally with production environment, use:
+   RAILS_ENV=production unicorn
+And the application runs on port 80.
+----------
